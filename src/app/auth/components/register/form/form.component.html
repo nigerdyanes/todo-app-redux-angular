@@ -1,0 +1,29 @@
+<div class="card border-primary mb-3 card__register">
+    <div class="card-header text-center">
+        <h4 class="mt-2">Sign Up</h4>    
+    </div>
+    <div class="card-body">
+      <form [formGroup]="registerForm" (ngSubmit)="register()">
+        <div class="form-group">
+            <label class="form-label mt-2">Email address</label>
+            <input type="email" class="form-control" [class.is-valid]="registerForm.controls['email'].valid" formControlName="email" placeholder="Enter email">
+          </div>
+          <div class="form-group">
+            <label class="form-label mt-2">Password</label>
+            <input type="password" class="form-control" [class.is-valid]="registerForm.controls['password'].valid" formControlName="password" placeholder="Password">
+          </div>
+          <div class="form-group">
+            <label class="form-label mt-2">First Name</label>
+            <input type="text" class="form-control" [class.is-valid]="registerForm.controls['firstName'].valid" formControlName="firstName" placeholder="Password">
+          </div>
+          <div class="form-group">
+            <label class="form-label mt-2">Last Name</label>
+            <input type="text" class="form-control" [class.is-valid]="registerForm.controls['lastName'].valid" formControlName="lastName" placeholder="Password">
+          </div>
+          <div class="form-group mt-4 text-center">
+            <button type="submit" [disabled]="registerForm.invalid" class="btn btn-outline-primary">Register</button>
+            <button type="button" class="btn btn-outline-light" [routerLink]="['/auth/login']">Back to login</button>
+          </div>
+      </form>
+    </div>
+</div>
