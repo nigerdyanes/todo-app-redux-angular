@@ -14,3 +14,9 @@ export const registerUserSuccess = createAction('[Auth] Create User Success',
 export const registerUserFailed = createAction('[Auth] Create User Failed', 
    props<{payload:any }>()
 );
+
+export const login = createAction('[Auth] Login', props<{user: UserI}>());
+
+export const loginSuccess = createAction('[Auth] Login User', props<{token: string}>());
+
+export const loginFailed = createAction('[Auth] Login Failed', props<{payload: any}>());
